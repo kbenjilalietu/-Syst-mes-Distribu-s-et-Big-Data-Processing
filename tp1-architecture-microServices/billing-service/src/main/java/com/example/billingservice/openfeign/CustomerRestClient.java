@@ -16,5 +16,4 @@ public interface CustomerRestClient
 
     @GetMapping(path = "/api/customers")
     List<Customer> getAllCustomers();
-
 }

@@ -28,7 +28,6 @@ public class CustomerServiceImpl implements CustomerService
     public CustomerResponseDTO addCustomer(CustomerRequestDTO customerRequestDTO)
     {
         Customer customer = customerMapper.customerRequestDTOToCustomer(customerRequestDTO);
-        customer.setId(UUID.randomUUID().toString());
         Customer saveCustomer = customerRepository.save(customer);
         CustomerResponseDTO customerResponseDTO = customerMapper.customerToCustomerResponseDTO(saveCustomer);
         return customerResponseDTO;
@@ -41,13 +40,11 @@ public class CustomerServiceImpl implements CustomerService
     }
 
     @Override
-    public CustomerResponseDTO update(String id, CustomerRequestDTO customerRequestDTO)
+    public CustomerResponseDTO update(CustomerRequestDTO customerRequestDTO)
     {
-        CustomerResponseDTO findCustomer = getCustomer(id);
         Customer customer = customerMapper.customerRequestDTOToCustomer(customerRequestDTO);
-        customer.setId(findCustomer.getId());
-        Customer updatedCustomer = customerRepository.save(customer);
-        CustomerResponseDTO customerResponseDTO = customerMapper.customerToCustomerResponseDTO(updatedCustomer);
+        Customer saveCustomer = customerRepository.save(customer);
+        CustomerResponseDTO customerResponseDTO = customerMapper.customerToCustomerResponseDTO(saveCustomer);
         return customerResponseDTO;
     }
 

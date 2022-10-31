@@ -8,6 +8,6 @@ import java.util.List;
 public interface CustomerService {
     CustomerResponseDTO addCustomer(CustomerRequestDTO customerRequestDTO);
     CustomerResponseDTO getCustomer(String id);
-    CustomerResponseDTO update(String id, CustomerRequestDTO customerRequestDTO);
+    CustomerResponseDTO update(CustomerRequestDTO customerRequestDTO);
     List<CustomerResponseDTO> listCustomers();
 }

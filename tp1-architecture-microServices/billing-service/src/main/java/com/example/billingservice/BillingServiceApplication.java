@@ -22,9 +22,9 @@ public class BillingServiceApplication {
     CommandLineRunner strat(InvoiceService invoiceService)
     {
         return args -> {
-            invoiceService.addInvoice(new InvoiceRequestDTO(BigDecimal.valueOf(90000), "7c76a057-a56b-4f61-95a1-c98c43cfb5dc"));
-            invoiceService.addInvoice(new InvoiceRequestDTO(BigDecimal.valueOf(40000), "7c76a057-a56b-4f61-95a1-c98c43cfb5dc"));
-            invoiceService.addInvoice(new InvoiceRequestDTO(BigDecimal.valueOf(10000), "7c76a057-a56b-4f61-95a1-c98c43cfb5dc"));
+            invoiceService.addInvoice(new InvoiceRequestDTO(BigDecimal.valueOf(90000), "C01"));
+            invoiceService.addInvoice(new InvoiceRequestDTO(BigDecimal.valueOf(40000), "C01"));
+            invoiceService.addInvoice(new InvoiceRequestDTO(BigDecimal.valueOf(10000), "C02"));
         };
     }
 

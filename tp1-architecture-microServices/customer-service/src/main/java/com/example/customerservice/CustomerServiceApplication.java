@@ -17,9 +17,9 @@ public class CustomerServiceApplication {
     @Bean
     CommandLineRunner start(CustomerService customerService){
         return args -> {
-            customerService.addCustomer(new CustomerRequestDTO("Adria", "adria@adria.com"));
-            customerService.addCustomer(new CustomerRequestDTO("OpenLab", "open@openLab.com"));
-            customerService.addCustomer(new CustomerRequestDTO("Nimbleways", "nimbleways@nimbleways.com"));
+            customerService.addCustomer(new CustomerRequestDTO("C01","Adria", "adria@adria.com"));
+            customerService.addCustomer(new CustomerRequestDTO("C02","OpenLab", "open@openLab.com"));
+            customerService.addCustomer(new CustomerRequestDTO("C03","Nimbleways", "nimbleways@nimbleways.com"));
         };
     }
 

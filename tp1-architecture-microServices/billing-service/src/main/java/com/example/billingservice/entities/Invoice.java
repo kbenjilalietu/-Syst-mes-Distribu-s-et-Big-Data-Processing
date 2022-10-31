@@ -18,8 +18,6 @@ public class Invoice {
     private Date date;
     private BigDecimal amount;
     private String customerId;
-
     @Transient   // cette attribut n'est pas persistant
     private Customer customer;
-
 }
