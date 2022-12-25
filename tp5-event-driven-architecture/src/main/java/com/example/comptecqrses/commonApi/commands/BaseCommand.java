@@ -3,9 +3,9 @@ package com.example.comptecqrses.commonApi.commands;
 import lombok.Getter;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-public abstract class BaseCommand<T>
+public class BaseCommand<T>
 {
-    //identifiant de l'agregat où on va effectuer la commande
+    //identifiant de l'aggregat où on va effectuer la commande
     @TargetAggregateIdentifier
     @Getter private T id;
 
