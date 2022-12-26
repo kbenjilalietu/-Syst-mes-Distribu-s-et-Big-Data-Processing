@@ -69,11 +69,8 @@ public class AccountAggregate
         if (command.getCreditAmount() < 0) {
             throw new RuntimeException("Credit amount cannot be negative");
         }
-
         AggregateLifecycle.apply(new AccountCreditedEvent(
-                command.getId(),
-                command.getCreditAmount(),
-                command.getCurrency()
+                command.getId(), command.getCreditAmount(), command.getCurrency()
         ));
     }
 
@@ -87,15 +84,11 @@ public class AccountAggregate
         if (command.getDebitAmount() < 0) {
             throw new RuntimeException("Debit amount should not be negative");
         }
-
         if (this.balance < command.getDebitAmount()) {
             throw new RuntimeException("Balance not sufficient");
         }
-
         AggregateLifecycle.apply(new AccountDebitedEvent(
-                command.getId(),
-                command.getDebitAmount(),
-                command.getCurrency()
+                command.getId(), command.getDebitAmount(), command.getCurrency()
         ));
     }
 

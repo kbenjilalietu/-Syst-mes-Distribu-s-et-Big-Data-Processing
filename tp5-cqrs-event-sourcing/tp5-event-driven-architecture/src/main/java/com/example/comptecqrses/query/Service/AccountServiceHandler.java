@@ -23,7 +23,6 @@ import java.util.List;
 
 @Service @AllArgsConstructor
 @Slf4j
-
 public class AccountServiceHandler {
     private AccountRepository accountRepository;
     private OperationAccountRepository operationAccountRepository;
@@ -38,14 +37,6 @@ public class AccountServiceHandler {
         account.setBalance(event.getAccountBalance());
         account.setCurrency(event.getCurrency());
         account.setStatus(AccountStatus.CREATED);
-
-        Operation operation = new Operation();
-        operation.setDate(new Date());
-        operation.setMontant(event.getAccountBalance());
-        operation.setType(OperationType.CREDIT);
-        operation.setAccount(account);
-
-        operationAccountRepository.save(operation);
         accountRepository.save(account);
     }
 

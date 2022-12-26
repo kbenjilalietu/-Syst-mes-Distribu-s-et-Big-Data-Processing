@@ -10,9 +10,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data @NoArgsConstructor @AllArgsConstructor
 public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

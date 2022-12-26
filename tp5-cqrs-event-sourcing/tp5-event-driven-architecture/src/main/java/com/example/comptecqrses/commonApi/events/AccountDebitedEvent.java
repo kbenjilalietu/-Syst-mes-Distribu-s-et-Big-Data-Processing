@@ -1,20 +1,14 @@
 package com.example.comptecqrses.commonApi.events;
 
+import lombok.Getter;
+
 public class AccountDebitedEvent extends BaseEvent<String> {
-    private double debitAmount;
-    private String currency;
+    @Getter private double debitAmount;
+    @Getter private String currency;
 
     public AccountDebitedEvent(String id, double debitAmount, String currency) {
         super(id);
         this.debitAmount = debitAmount;
         this.currency = currency;
-    }
-
-    public double getDebitAmount() {
-        return debitAmount;
-    }
-
-    public String getCurrency() {
-        return currency;
     }
 }
